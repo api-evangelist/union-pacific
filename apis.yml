@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/apis.yml
 apis:
   - aid: union-pacific:union-pacific
-    name: Union Pacific
+    name: Union Pacific API
     tags:
       - API
     humanURL: ' https://www.up.com/customers/all/api-developer/index.htm'
