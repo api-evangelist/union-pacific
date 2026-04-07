@@ -5,10 +5,10 @@ apis:
   - aid: union-pacific:union-pacific
     name: Union Pacific API
     tags:
-      - Trains
+      - Freight
       - Railroads
       - Shipping
-      - Freight
+      - Trains
     humanURL: ' https://www.up.com/customers/all/api-developer/index.htm'
     properties:
       - url: ' https://www.up.com/customers/all/api-developer/index.htm'
@@ -22,10 +22,10 @@ apis:
       make informed decisions.
 name: Union Pacific
 tags:
-  - Trains
+  - Freight
   - Railroads
   - Shipping
-  - Freight
+  - Trains
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
