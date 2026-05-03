@@ -1,0 +1,166 @@
+name: Union Pacific API Vocabulary
+description: >-
+  Operational and capability vocabulary for Union Pacific railroad supply chain API,
+  covering shipment tracking, exception management, intermodal planning, and equipment
+  management.
+
+operational:
+  resources:
+    - name: Shipment
+      description: A rail shipment in transit with tracking and ETA data
+      paths:
+        - /shipment
+        - /shipment/{shipmentId}
+      operations:
+        - listShipments
+        - getShipment
+    - name: Case
+      description: An exception case for a shipment that is off course or delayed
+      paths:
+        - /case
+        - /case/{caseId}
+      operations:
+        - listCases
+        - getCase
+    - name: Equipment
+      description: Rail car equipment used in shipping operations
+      paths:
+        - /equipment
+      operations:
+        - listEquipment
+    - name: Intermodal
+      description: Intermodal planning, reservations, and departure scheduling
+      paths:
+        - /intermodal
+      operations:
+        - createIntermodalReservation
+        - listIntermodalLanes
+        - listIntermodalDepartures
+    - name: Location
+      description: Union Pacific network facilities, yards, and terminals
+      paths:
+        - /location
+      operations:
+        - listLocations
+    - name: Account
+      description: Company account information and identifiers
+      paths:
+        - /account
+      operations:
+        - getAccount
+    - name: Waybill
+      description: Railroad waybill documents for shipment billing and routing
+      paths:
+        - /waybill
+      operations:
+        - listWaybills
+
+  actions:
+    - name: List
+      description: Retrieve a list of resources matching optional filters
+      operations:
+        - listShipments
+        - listCases
+        - listEquipment
+        - listIntermodalLanes
+        - listIntermodalDepartures
+        - listLocations
+        - listWaybills
+    - name: Get
+      description: Retrieve a specific resource by identifier
+      operations:
+        - getShipment
+        - getCase
+        - getAccount
+    - name: Order
+      description: Place an order for rail car equipment
+      operations:
+        - orderEquipment
+    - name: Release
+      description: Release held equipment for a shipment
+      operations:
+        - releaseShipment
+    - name: Cancel
+      description: Cancel a shipment or request
+      operations:
+        - cancelRequest
+    - name: Create
+      description: Create a new intermodal reservation
+      operations:
+        - createIntermodalReservation
+
+capability:
+  tools:
+    - name: list-shipments
+      description: Track active rail shipments with current location and ETAs
+      capability: rail-freight-operations
+    - name: get-shipment
+      description: Get detailed tracking information for a specific shipment
+      capability: rail-freight-operations
+    - name: list-cases
+      description: View exception cases for shipments that are off course or delayed
+      capability: rail-freight-operations
+    - name: get-case
+      description: Get details for a specific exception case
+      capability: rail-freight-operations
+    - name: list-equipment
+      description: Search available rail car equipment by type
+      capability: rail-freight-operations
+    - name: order-equipment
+      description: Order rail car equipment for a shipment
+      capability: rail-freight-operations
+    - name: release-shipment
+      description: Release held rail car equipment for a shipment
+      capability: rail-freight-operations
+    - name: create-intermodal-reservation
+      description: Reserve space on an intermodal train between UP terminals
+      capability: rail-freight-operations
+    - name: list-intermodal-lanes
+      description: List available intermodal service lanes and transit times
+      capability: rail-freight-operations
+    - name: list-intermodal-departures
+      description: View scheduled intermodal train departures and capacity
+      capability: rail-freight-operations
+    - name: list-locations
+      description: View Union Pacific network facilities, yards, and terminals
+      capability: rail-freight-operations
+    - name: list-waybills
+      description: Look up waybill details for shipments
+      capability: rail-freight-operations
+
+  workflows:
+    - name: Rail Freight Operations
+      description: End-to-end rail freight workflow from equipment ordering through shipment tracking and exception management
+      capability: rail-freight-operations
+      steps:
+        - Order or locate available equipment
+        - Create intermodal reservation if applicable
+        - Track active shipments for location and ETA
+        - Monitor exception cases for off-course shipments
+        - Release held equipment when issues are resolved
+
+  personas:
+    - name: Logistics Manager
+      description: Manages rail freight shipments and oversees supply chain exception handling
+      tools:
+        - list-shipments
+        - get-shipment
+        - list-cases
+        - get-case
+        - release-shipment
+    - name: Supply Chain Analyst
+      description: Analyzes freight patterns, plans intermodal routes, and tracks performance
+      tools:
+        - list-shipments
+        - list-intermodal-lanes
+        - list-intermodal-departures
+        - list-locations
+        - list-waybills
+    - name: Operations Coordinator
+      description: Coordinates equipment ordering, intermodal reservations, and terminal operations
+      tools:
+        - list-equipment
+        - order-equipment
+        - create-intermodal-reservation
+        - list-intermodal-departures
+        - list-locations

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-waybill-schema.json",
+  "title": "Waybill",
+  "description": "Waybill record for a shipment",
+  "type": "object",
+  "properties": {
+    "waybillNumber": {
+      "type": "string",
+      "description": "Unique waybill number"
+    },
+    "shipmentId": {
+      "type": "string",
+      "description": "Associated shipment ID"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin location code"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination location code"
+    },
+    "commodity": {
+      "type": "string",
+      "description": "Commodity description"
+    },
+    "weight": {
+      "type": "number",
+      "description": "Shipment weight in pounds"
+    },
+    "accountId": {
+      "type": "string",
+      "description": "Billing account ID"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Waybill creation date"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Waybill",
+  "description": "A railroad document containing shipment routing and billing information",
+  "fields": [
+    { "name": "waybillNumber", "type": "string", "description": "Unique waybill number" },
+    { "name": "shipmentId", "type": "string", "description": "Associated shipment ID" },
+    { "name": "origin", "type": "string", "description": "Origin location code" },
+    { "name": "destination", "type": "string", "description": "Destination location code" },
+    { "name": "commodity", "type": "string", "description": "Commodity description" },
+    { "name": "weight", "type": "number", "description": "Shipment weight in tons" },
+    { "name": "accountId", "type": "string", "description": "Billing account identifier" },
+    { "name": "createdAt", "type": "datetime", "description": "Waybill creation date" }
+  ]
+}

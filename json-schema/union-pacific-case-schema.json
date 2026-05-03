@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-case-schema.json",
+  "title": "Case",
+  "description": "An exception case for a shipment that is off course or requires attention",
+  "type": "object",
+  "properties": {
+    "caseId": {
+      "type": "string",
+      "description": "Unique case identifier"
+    },
+    "shipmentId": {
+      "type": "string",
+      "description": "Associated shipment ID"
+    },
+    "status": {
+      "type": "string",
+      "description": "Case status",
+      "enum": [
+        "OPEN",
+        "CLOSED",
+        "IN_PROGRESS"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of exception"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the exception"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the case was created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the case was last updated"
+    },
+    "accountId": {
+      "type": "string",
+      "description": "Account identifier"
+    }
+  }
+}

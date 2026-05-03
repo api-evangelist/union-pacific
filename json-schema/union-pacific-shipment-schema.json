@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-shipment-schema.json",
+  "title": "Shipment",
+  "description": "A rail shipment with tracking and ETA information",
+  "type": "object",
+  "properties": {
+    "shipmentId": {
+      "type": "string",
+      "description": "Unique shipment identifier"
+    },
+    "status": {
+      "type": "string",
+      "description": "Current shipment status",
+      "enum": [
+        "IN_TRANSIT",
+        "DELIVERED",
+        "DELAYED",
+        "HELD",
+        "CANCELLED"
+      ]
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin location code"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination location code"
+    },
+    "currentLocation": {
+      "$ref": "#/components/schemas/Location"
+    },
+    "estimatedArrival": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Estimated time of arrival at destination"
+    },
+    "estimatedGate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Estimated gate time at destination"
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Equipment"
+      },
+      "description": "Equipment associated with this shipment"
+    },
+    "accountId": {
+      "type": "string",
+      "description": "Account identifier"
+    },
+    "waybillNumber": {
+      "type": "string",
+      "description": "Associated waybill number"
+    },
+    "commodity": {
+      "type": "string",
+      "description": "Type of commodity being shipped"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-reservation-schema.json",
+  "title": "IntermodalReservation",
+  "description": "Confirmed intermodal terminal reservation",
+  "type": "object",
+  "properties": {
+    "reservationId": {
+      "type": "string",
+      "description": "Unique reservation ID"
+    },
+    "status": {
+      "type": "string",
+      "description": "Reservation status"
+    },
+    "confirmationNumber": {
+      "type": "string",
+      "description": "Confirmation number"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin terminal"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination terminal"
+    },
+    "scheduledDeparture": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Scheduled departure time"
+    },
+    "estimatedArrival": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Estimated arrival time"
+    }
+  }
+}

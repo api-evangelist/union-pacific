@@ -1,0 +1,16 @@
+{
+  "name": "IntermodalReservation",
+  "description": "A reservation for intermodal container transport between Union Pacific terminals",
+  "fields": [
+    { "name": "reservationId", "type": "string", "description": "Unique reservation identifier" },
+    { "name": "status", "type": "string", "description": "Reservation status (CONFIRMED, PENDING, CANCELLED)" },
+    { "name": "confirmationNumber", "type": "string", "description": "Confirmation number for the reservation" },
+    { "name": "origin", "type": "string", "description": "Origin terminal code" },
+    { "name": "destination", "type": "string", "description": "Destination terminal code" },
+    { "name": "scheduledDeparture", "type": "datetime", "description": "Scheduled departure time" },
+    { "name": "estimatedArrival", "type": "datetime", "description": "Estimated arrival time" },
+    { "name": "equipmentType", "type": "string", "description": "Type of container equipment" },
+    { "name": "quantity", "type": "integer", "description": "Number of containers reserved" },
+    { "name": "accountId", "type": "string", "description": "Account identifier" }
+  ]
+}

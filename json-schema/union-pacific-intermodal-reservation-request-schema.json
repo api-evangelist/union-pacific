@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-reservation-request-schema.json",
+  "title": "IntermodalReservationRequest",
+  "description": "Request body for creating an intermodal terminal reservation",
+  "type": "object",
+  "required": [
+    "origin",
+    "destination",
+    "date",
+    "equipmentType"
+  ],
+  "properties": {
+    "origin": {
+      "type": "string",
+      "description": "Origin intermodal terminal code"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination intermodal terminal code"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Requested departure date"
+    },
+    "equipmentType": {
+      "type": "string",
+      "description": "Equipment type (e.g., 53FT_CONTAINER, 20FT_CONTAINER)"
+    },
+    "quantity": {
+      "type": "integer",
+      "description": "Number of units",
+      "default": 1
+    },
+    "accountId": {
+      "type": "string",
+      "description": "Billing account ID"
+    }
+  }
+}

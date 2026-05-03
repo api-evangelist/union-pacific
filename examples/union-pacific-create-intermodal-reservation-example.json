@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.up.com/intermodal/reservation",
+    "headers": {
+      "Authorization": "Bearer YOUR_OAUTH_TOKEN",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "origin": "LOS_ANGELES_ICTF",
+      "destination": "CHICAGO_GLOBAL_III",
+      "date": "2026-05-10",
+      "equipmentType": "53FT_CONTAINER",
+      "quantity": 2,
+      "accountId": "ACCT-12345"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "reservationId": "RES-2026-123456",
+      "status": "CONFIRMED",
+      "confirmationNumber": "UP-CONF-789012",
+      "origin": "LOS_ANGELES_ICTF",
+      "destination": "CHICAGO_GLOBAL_III",
+      "scheduledDeparture": "2026-05-10T18:00:00Z",
+      "estimatedArrival": "2026-05-13T10:00:00Z"
+    }
+  }
+}

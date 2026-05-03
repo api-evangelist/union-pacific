@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-location-schema.json",
+  "title": "Location",
+  "description": "A Union Pacific network facility or location",
+  "type": "object",
+  "properties": {
+    "locationCode": {
+      "type": "string",
+      "description": "Location identifier code"
+    },
+    "name": {
+      "type": "string",
+      "description": "Location name"
+    },
+    "type": {
+      "type": "string",
+      "description": "Location type (TERMINAL, YARD, INTERMODAL, STATION)"
+    },
+    "city": {
+      "type": "string",
+      "description": "City"
+    },
+    "state": {
+      "type": "string",
+      "description": "US state code"
+    },
+    "latitude": {
+      "type": "number",
+      "format": "double",
+      "description": "Geographic latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "format": "double",
+      "description": "Geographic longitude"
+    }
+  }
+}

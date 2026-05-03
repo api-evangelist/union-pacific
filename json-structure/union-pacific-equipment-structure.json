@@ -1,0 +1,12 @@
+{
+  "name": "Equipment",
+  "description": "Rail car equipment used in shipment operations",
+  "fields": [
+    { "name": "equipmentNumber", "type": "string", "description": "Unique equipment number" },
+    { "name": "type", "type": "string", "description": "Equipment type (INTERMODAL, BOXCAR, FLATCAR, GONDOLA, TANK)" },
+    { "name": "status", "type": "string", "description": "Equipment status (AVAILABLE, IN_TRANSIT, HELD, MAINTENANCE)" },
+    { "name": "location", "type": "Location", "description": "Current location of the equipment" },
+    { "name": "capacity", "type": "string", "description": "Equipment capacity specification" },
+    { "name": "accountId", "type": "string", "description": "Account identifier" }
+  ]
+}

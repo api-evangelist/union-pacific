@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-account-schema.json",
+  "title": "Account",
+  "description": "Union Pacific customer account",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "type": "string",
+      "description": "Unique account identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Account name"
+    },
+    "type": {
+      "type": "string",
+      "description": "Account type"
+    },
+    "status": {
+      "type": "string",
+      "description": "Account status"
+    }
+  }
+}

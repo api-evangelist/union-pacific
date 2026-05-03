@@ -1,0 +1,327 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Union Pacific Rail Freight Operations"
+  description: >-
+    Unified rail freight operations workflow for shipment visibility, supply chain
+    exception management, intermodal planning, and equipment management. Used by
+    logistics managers, supply chain analysts, and operations teams integrating
+    Union Pacific railroad services into their supply chain platforms.
+  tags:
+    - Union Pacific
+    - Freight
+    - Railroads
+    - Supply Chain
+    - Logistics
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+binds:
+  - namespace: env
+    keys:
+      UP_API_TOKEN: UP_API_TOKEN
+
+capability:
+  consumes:
+    - import: union-pacific
+      location: ./shared/union-pacific-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: union-pacific-freight-api
+      description: "Unified REST API for Union Pacific rail freight operations."
+      resources:
+        - path: /v1/shipments
+          name: shipments
+          description: "Active rail shipment tracking"
+          operations:
+            - method: GET
+              name: list-shipments
+              description: "Track active shipments with real-time location and ETAs"
+              call: "union-pacific.list-shipments"
+              with:
+                accountId: "rest.accountId"
+                destination: "rest.destination"
+                origin: "rest.origin"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: get-shipment
+              description: "Get tracking details for a specific shipment"
+              call: "union-pacific.get-shipment"
+              with:
+                shipmentId: "rest.shipmentId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/cases
+          name: cases
+          description: "Supply chain exception case management"
+          operations:
+            - method: GET
+              name: list-cases
+              description: "View exception cases for off-course shipments"
+              call: "union-pacific.list-cases"
+              with:
+                accountId: "rest.accountId"
+                status: "rest.status"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: get-case
+              description: "Get details for a specific exception case"
+              call: "union-pacific.get-case"
+              with:
+                caseId: "rest.caseId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/equipment
+          name: equipment
+          description: "Rail equipment search and management"
+          operations:
+            - method: GET
+              name: list-equipment
+              description: "Search available rail equipment"
+              call: "union-pacific.list-equipment"
+              with:
+                equipmentType: "rest.equipmentType"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: release-shipment
+              description: "Release held equipment for a shipment"
+              call: "union-pacific.release-shipment"
+              with:
+                shipmentId: "rest.shipmentId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: order-equipment
+              description: "Order rail car equipment"
+              call: "union-pacific.order-equipment"
+              with:
+                accountId: "rest.accountId"
+                equipmentType: "rest.equipmentType"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/intermodal/reservations
+          name: intermodal-reservations
+          description: "Intermodal terminal reservation management"
+          operations:
+            - method: POST
+              name: create-intermodal-reservation
+              description: "Create an intermodal terminal reservation"
+              call: "union-pacific.create-intermodal-reservation"
+              with:
+                origin: "rest.origin"
+                destination: "rest.destination"
+                date: "rest.date"
+                equipmentType: "rest.equipmentType"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/intermodal/lanes
+          name: intermodal-lanes
+          description: "Available intermodal service lanes"
+          operations:
+            - method: GET
+              name: list-intermodal-lanes
+              description: "List available service lanes"
+              call: "union-pacific.list-intermodal-lanes"
+              with:
+                origin: "rest.origin"
+                destination: "rest.destination"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/locations
+          name: locations
+          description: "Union Pacific network locations"
+          operations:
+            - method: GET
+              name: list-locations
+              description: "View UP network facility locations"
+              call: "union-pacific.list-locations"
+              with:
+                state: "rest.state"
+                type: "rest.type"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9080
+      namespace: union-pacific-freight-mcp
+      transport: http
+      description: "MCP server for AI-assisted rail freight operations and supply chain visibility."
+      tools:
+        - name: list-shipments
+          description: "Track active rail shipments showing current location and estimated arrival times"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.list-shipments"
+          with:
+            accountId: "tools.accountId"
+            destination: "tools.destination"
+            origin: "tools.origin"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-shipment
+          description: "Get detailed tracking information for a specific rail shipment"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.get-shipment"
+          with:
+            shipmentId: "tools.shipmentId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-cases
+          description: "View exception cases for shipments that are off course or experiencing delays"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.list-cases"
+          with:
+            accountId: "tools.accountId"
+            status: "tools.status"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-case
+          description: "Get details for a specific supply chain exception case"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.get-case"
+          with:
+            caseId: "tools.caseId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-equipment
+          description: "Search available rail car equipment by type and specifications"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.list-equipment"
+          with:
+            equipmentType: "tools.equipmentType"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: order-equipment
+          description: "Order rail car equipment for a shipment from origin to destination"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "union-pacific.order-equipment"
+          with:
+            accountId: "tools.accountId"
+            equipmentType: "tools.equipmentType"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: release-shipment
+          description: "Release held rail car equipment for a shipment"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: true
+          call: "union-pacific.release-shipment"
+          with:
+            shipmentId: "tools.shipmentId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: create-intermodal-reservation
+          description: "Reserve space on an intermodal train between UP terminals"
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "union-pacific.create-intermodal-reservation"
+          with:
+            origin: "tools.origin"
+            destination: "tools.destination"
+            date: "tools.date"
+            equipmentType: "tools.equipmentType"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-intermodal-lanes
+          description: "List available intermodal service lanes and transit times between terminals"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "union-pacific.list-intermodal-lanes"
+          with:
+            origin: "tools.origin"
+            destination: "tools.destination"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-intermodal-departures
+          description: "View scheduled intermodal train departures and available capacity"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.list-intermodal-departures"
+          with:
+            origin: "tools.origin"
+            destination: "tools.destination"
+            date: "tools.date"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-locations
+          description: "View Union Pacific network facilities, yards, and terminals with location details"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "union-pacific.list-locations"
+          with:
+            state: "tools.state"
+            type: "tools.type"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-waybills
+          description: "Look up waybill details for shipments"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "union-pacific.list-waybills"
+          with:
+            waybillNumber: "tools.waybillNumber"
+            shipmentId: "tools.shipmentId"
+          outputParameters:
+            - type: object
+              mapping: "$."

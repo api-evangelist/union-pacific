@@ -1,0 +1,45 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.up.com/shipment",
+    "headers": {
+      "Authorization": "Bearer YOUR_OAUTH_TOKEN"
+    },
+    "parameters": {
+      "accountId": "ACCT-12345",
+      "destination": "CHICAGO"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "shipmentId": "UPRR-2026-789012",
+        "status": "IN_TRANSIT",
+        "origin": "LOS_ANGELES",
+        "destination": "CHICAGO",
+        "currentLocation": {
+          "locationCode": "DENVER_YARD",
+          "name": "Denver Intermodal Facility",
+          "type": "INTERMODAL",
+          "city": "Denver",
+          "state": "CO",
+          "latitude": 39.7392,
+          "longitude": -104.9903
+        },
+        "estimatedArrival": "2026-05-05T14:00:00Z",
+        "estimatedGate": "2026-05-05T16:00:00Z",
+        "equipment": [
+          {
+            "equipmentNumber": "UP-234567",
+            "type": "INTERMODAL",
+            "status": "IN_TRANSIT"
+          }
+        ],
+        "accountId": "ACCT-12345",
+        "waybillNumber": "WB-2026-456789",
+        "commodity": "Consumer Electronics"
+      }
+    ]
+  }
+}

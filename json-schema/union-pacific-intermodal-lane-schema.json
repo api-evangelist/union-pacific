@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-lane-schema.json",
+  "title": "IntermodalLane",
+  "description": "Available intermodal service lane",
+  "type": "object",
+  "properties": {
+    "laneId": {
+      "type": "string",
+      "description": "Lane identifier"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin terminal code"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination terminal code"
+    },
+    "transitDays": {
+      "type": "integer",
+      "description": "Standard transit time in days"
+    },
+    "frequency": {
+      "type": "string",
+      "description": "Service frequency (e.g., DAILY, WEEKLY)"
+    },
+    "equipmentTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Equipment types available on this lane"
+    }
+  }
+}

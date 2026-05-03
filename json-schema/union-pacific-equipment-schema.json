@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-equipment-schema.json",
+  "title": "Equipment",
+  "description": "Rail equipment (car) with specifications and tracking status",
+  "type": "object",
+  "properties": {
+    "equipmentNumber": {
+      "type": "string",
+      "description": "Equipment identifier (rail car number)"
+    },
+    "type": {
+      "type": "string",
+      "description": "Equipment type (e.g., BOXCAR, FLATCAR, TANK_CAR, INTERMODAL)"
+    },
+    "status": {
+      "type": "string",
+      "description": "Current equipment status"
+    },
+    "currentLocation": {
+      "type": "string",
+      "description": "Current location code"
+    },
+    "specifications": {
+      "type": "object",
+      "description": "Equipment specifications (length, capacity, etc.)",
+      "properties": {
+        "length": {
+          "type": "number",
+          "description": "Length in feet"
+        },
+        "capacity": {
+          "type": "number",
+          "description": "Capacity in tons"
+        }
+      }
+    }
+  }
+}

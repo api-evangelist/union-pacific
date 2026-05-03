@@ -1,0 +1,17 @@
+{
+  "name": "Shipment",
+  "description": "A rail shipment with real-time tracking, location, and ETA information",
+  "fields": [
+    { "name": "shipmentId", "type": "string", "description": "Unique shipment identifier" },
+    { "name": "status", "type": "string", "description": "Current shipment status (IN_TRANSIT, DELIVERED, DELAYED, HELD, CANCELLED)" },
+    { "name": "origin", "type": "string", "description": "Origin location code" },
+    { "name": "destination", "type": "string", "description": "Destination location code" },
+    { "name": "currentLocation", "type": "Location", "description": "Current location of the shipment" },
+    { "name": "estimatedArrival", "type": "datetime", "description": "Estimated time of arrival at destination" },
+    { "name": "estimatedGate", "type": "datetime", "description": "Estimated gate time at destination" },
+    { "name": "equipment", "type": "array[Equipment]", "description": "Equipment associated with this shipment" },
+    { "name": "accountId", "type": "string", "description": "Account identifier" },
+    { "name": "waybillNumber", "type": "string", "description": "Associated waybill number" },
+    { "name": "commodity", "type": "string", "description": "Type of commodity being shipped" }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "up": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-ld/union-pacific-context.jsonld#",
+
+    "Shipment": {
+      "@id": "up:Shipment",
+      "@type": "schema:ParcelDelivery"
+    },
+    "Equipment": {
+      "@id": "up:Equipment",
+      "@type": "schema:Vehicle"
+    },
+    "Location": {
+      "@id": "up:Location",
+      "@type": "schema:Place"
+    },
+    "Case": {
+      "@id": "up:Case",
+      "@type": "schema:Report"
+    },
+    "Waybill": {
+      "@id": "up:Waybill",
+      "@type": "schema:ShippingDeliveryTime"
+    },
+    "IntermodalReservation": {
+      "@id": "up:IntermodalReservation",
+      "@type": "schema:Reservation"
+    },
+
+    "shipmentId": {
+      "@id": "schema:trackingNumber",
+      "@type": "xsd:string"
+    },
+    "waybillNumber": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "equipmentNumber": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "origin": {
+      "@id": "schema:departureStation",
+      "@type": "xsd:string"
+    },
+    "destination": {
+      "@id": "schema:arrivalStation",
+      "@type": "xsd:string"
+    },
+    "estimatedArrival": {
+      "@id": "schema:arrivalTime",
+      "@type": "xsd:dateTime"
+    },
+    "status": {
+      "@id": "schema:deliveryStatus",
+      "@type": "xsd:string"
+    },
+    "commodity": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "latitude": {
+      "@id": "geo:lat",
+      "@type": "xsd:decimal"
+    },
+    "longitude": {
+      "@id": "geo:long",
+      "@type": "xsd:decimal"
+    },
+    "city": {
+      "@id": "schema:addressLocality",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "schema:addressRegion",
+      "@type": "xsd:string"
+    }
+  }
+}

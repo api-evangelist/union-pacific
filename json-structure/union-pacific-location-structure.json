@@ -1,0 +1,13 @@
+{
+  "name": "Location",
+  "description": "A Union Pacific network facility, terminal, or yard location",
+  "fields": [
+    { "name": "locationCode", "type": "string", "description": "Unique location code" },
+    { "name": "name", "type": "string", "description": "Location name" },
+    { "name": "type", "type": "string", "description": "Location type (YARD, INTERMODAL, TERMINAL, FACILITY)" },
+    { "name": "city", "type": "string", "description": "City name" },
+    { "name": "state", "type": "string", "description": "US state code" },
+    { "name": "latitude", "type": "number", "description": "Geographic latitude" },
+    { "name": "longitude", "type": "number", "description": "Geographic longitude" }
+  ]
+}

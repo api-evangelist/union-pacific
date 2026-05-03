@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-cancel-request-schema.json",
+  "title": "CancelRequest",
+  "description": "Request body for cancelling a request",
+  "type": "object",
+  "required": [
+    "requestId"
+  ],
+  "properties": {
+    "requestId": {
+      "type": "string",
+      "description": "ID of the request to cancel"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for cancellation"
+    }
+  }
+}

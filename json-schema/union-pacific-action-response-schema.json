@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-action-response-schema.json",
+  "title": "ActionResponse",
+  "description": "Response confirming a successful action",
+  "type": "object",
+  "properties": {
+    "confirmationNumber": {
+      "type": "string",
+      "description": "Unique confirmation number for the action"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the action",
+      "enum": [
+        "SUCCESS",
+        "PENDING",
+        "FAILED"
+      ]
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable status message"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the action was processed"
+    }
+  }
+}

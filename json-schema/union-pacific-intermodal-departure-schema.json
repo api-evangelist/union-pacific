@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-departure-schema.json",
+  "title": "IntermodalDeparture",
+  "description": "Scheduled intermodal train departure",
+  "type": "object",
+  "properties": {
+    "departureId": {
+      "type": "string",
+      "description": "Departure identifier"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin terminal"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination terminal"
+    },
+    "scheduledDeparture": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Scheduled departure time"
+    },
+    "estimatedArrival": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Estimated arrival time"
+    },
+    "availableCapacity": {
+      "type": "integer",
+      "description": "Available booking capacity"
+    }
+  }
+}

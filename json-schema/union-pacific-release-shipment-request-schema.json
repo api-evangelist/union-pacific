@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-release-shipment-request-schema.json",
+  "title": "ReleaseShipmentRequest",
+  "description": "Request body for releasing equipment",
+  "type": "object",
+  "required": [
+    "shipmentId"
+  ],
+  "properties": {
+    "shipmentId": {
+      "type": "string",
+      "description": "Shipment ID to release equipment for"
+    },
+    "equipmentNumber": {
+      "type": "string",
+      "description": "Specific equipment number to release"
+    },
+    "releaseType": {
+      "type": "string",
+      "description": "Type of release"
+    }
+  }
+}

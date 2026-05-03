@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-order-equipment-request-schema.json",
+  "title": "OrderEquipmentRequest",
+  "description": "Request body for ordering rail car equipment",
+  "type": "object",
+  "required": [
+    "accountId",
+    "equipmentType",
+    "origin",
+    "destination"
+  ],
+  "properties": {
+    "accountId": {
+      "type": "string",
+      "description": "Account identifier"
+    },
+    "equipmentType": {
+      "type": "string",
+      "description": "Type of equipment to order"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin location code"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination location code"
+    },
+    "requestedDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Requested equipment available date"
+    },
+    "quantity": {
+      "type": "integer",
+      "description": "Number of units to order",
+      "default": 1
+    }
+  }
+}

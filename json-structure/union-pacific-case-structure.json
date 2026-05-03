@@ -1,0 +1,14 @@
+{
+  "name": "Case",
+  "description": "An exception case for a shipment that is off course or requires attention",
+  "fields": [
+    { "name": "caseId", "type": "string", "description": "Unique case identifier" },
+    { "name": "shipmentId", "type": "string", "description": "Associated shipment ID" },
+    { "name": "status", "type": "string", "description": "Case status (OPEN, CLOSED, IN_PROGRESS)" },
+    { "name": "type", "type": "string", "description": "Type of exception" },
+    { "name": "description", "type": "string", "description": "Human-readable description of the exception" },
+    { "name": "createdAt", "type": "datetime", "description": "When the case was created" },
+    { "name": "updatedAt", "type": "datetime", "description": "When the case was last updated" },
+    { "name": "accountId", "type": "string", "description": "Account identifier" }
+  ]
+}
