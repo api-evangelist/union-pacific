@@ -1,0 +1,130 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Union Pacific API — Cases
+  description: 'Union Pacific API — Cases. 2 operations. Lead operation: List Cases. Self-contained Naftiko capability covering
+    one Union Pacific business surface.'
+  tags:
+  - Union Pacific
+  - Cases
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UNION_PACIFIC_API_KEY: UNION_PACIFIC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: union-pacific-cases
+    baseUri: https://api.up.com
+    description: Union Pacific API — Cases business capability. Self-contained, no shared references.
+    resources:
+    - name: case
+      path: /case
+      operations:
+      - name: listcases
+        method: GET
+        description: List Cases
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accountId
+          in: query
+          type: string
+          description: Account identifier to filter cases
+        - name: status
+          in: query
+          type: string
+          description: Filter by case status
+        - name: shipmentId
+          in: query
+          type: string
+          description: Filter cases for a specific shipment
+    - name: case-caseId
+      path: /case/{caseId}
+      operations:
+      - name: getcase
+        method: GET
+        description: Get Case
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: caseId
+          in: path
+          type: string
+          description: Unique case identifier
+          required: true
+  exposes:
+  - type: rest
+    namespace: union-pacific-cases-rest
+    port: 8080
+    description: REST adapter for Union Pacific API — Cases. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/case
+      name: case
+      description: REST surface for case.
+      operations:
+      - method: GET
+        name: listcases
+        description: List Cases
+        call: union-pacific-cases.listcases
+        with:
+          accountId: rest.accountId
+          status: rest.status
+          shipmentId: rest.shipmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/case/{caseid}
+      name: case-caseid
+      description: REST surface for case-caseId.
+      operations:
+      - method: GET
+        name: getcase
+        description: Get Case
+        call: union-pacific-cases.getcase
+        with:
+          caseId: rest.caseId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: union-pacific-cases-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Union Pacific API — Cases. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-cases
+      description: List Cases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: union-pacific-cases.listcases
+      with:
+        accountId: tools.accountId
+        status: tools.status
+        shipmentId: tools.shipmentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-case
+      description: Get Case
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: union-pacific-cases.getcase
+      with:
+        caseId: tools.caseId
+      outputParameters:
+      - type: object
+        mapping: $.

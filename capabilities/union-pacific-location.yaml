@@ -1,0 +1,88 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Union Pacific API — Location
+  description: 'Union Pacific API — Location. 1 operations. Lead operation: List Locations. Self-contained Naftiko capability
+    covering one Union Pacific business surface.'
+  tags:
+  - Union Pacific
+  - Location
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UNION_PACIFIC_API_KEY: UNION_PACIFIC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: union-pacific-location
+    baseUri: https://api.up.com
+    description: Union Pacific API — Location business capability. Self-contained, no shared references.
+    resources:
+    - name: location
+      path: /location
+      operations:
+      - name: listlocations
+        method: GET
+        description: List Locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: locationCode
+          in: query
+          type: string
+          description: Filter by location code
+        - name: state
+          in: query
+          type: string
+          description: Filter by US state
+        - name: type
+          in: query
+          type: string
+          description: Location type (e.g., TERMINAL, YARD, INTERMODAL)
+  exposes:
+  - type: rest
+    namespace: union-pacific-location-rest
+    port: 8080
+    description: REST adapter for Union Pacific API — Location. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/location
+      name: location
+      description: REST surface for location.
+      operations:
+      - method: GET
+        name: listlocations
+        description: List Locations
+        call: union-pacific-location.listlocations
+        with:
+          locationCode: rest.locationCode
+          state: rest.state
+          type: rest.type
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: union-pacific-location-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Union Pacific API — Location. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-locations
+      description: List Locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: union-pacific-location.listlocations
+      with:
+        locationCode: tools.locationCode
+        state: tools.state
+        type: tools.type
+      outputParameters:
+      - type: object
+        mapping: $.

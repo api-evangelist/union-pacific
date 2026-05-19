@@ -1,0 +1,142 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Union Pacific API — Shipment
+  description: 'Union Pacific API — Shipment. 2 operations. Lead operation: List Shipments. Self-contained Naftiko capability
+    covering one Union Pacific business surface.'
+  tags:
+  - Union Pacific
+  - Shipment
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UNION_PACIFIC_API_KEY: UNION_PACIFIC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: union-pacific-shipment
+    baseUri: https://api.up.com
+    description: Union Pacific API — Shipment business capability. Self-contained, no shared references.
+    resources:
+    - name: shipment
+      path: /shipment
+      operations:
+      - name: listshipments
+        method: GET
+        description: List Shipments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: shipmentId
+          in: query
+          type: string
+          description: Filter by shipment identifier
+        - name: equipmentNumber
+          in: query
+          type: string
+          description: Filter by equipment (rail car) number
+        - name: origin
+          in: query
+          type: string
+          description: Origin location code
+        - name: destination
+          in: query
+          type: string
+          description: Destination location code
+        - name: accountId
+          in: query
+          type: string
+          description: Account identifier to filter shipments
+    - name: shipment-shipmentId
+      path: /shipment/{shipmentId}
+      operations:
+      - name: getshipment
+        method: GET
+        description: Get Shipment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: shipmentId
+          in: path
+          type: string
+          description: Unique shipment identifier
+          required: true
+  exposes:
+  - type: rest
+    namespace: union-pacific-shipment-rest
+    port: 8080
+    description: REST adapter for Union Pacific API — Shipment. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/shipment
+      name: shipment
+      description: REST surface for shipment.
+      operations:
+      - method: GET
+        name: listshipments
+        description: List Shipments
+        call: union-pacific-shipment.listshipments
+        with:
+          shipmentId: rest.shipmentId
+          equipmentNumber: rest.equipmentNumber
+          origin: rest.origin
+          destination: rest.destination
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/shipment/{shipmentid}
+      name: shipment-shipmentid
+      description: REST surface for shipment-shipmentId.
+      operations:
+      - method: GET
+        name: getshipment
+        description: Get Shipment
+        call: union-pacific-shipment.getshipment
+        with:
+          shipmentId: rest.shipmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: union-pacific-shipment-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Union Pacific API — Shipment. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-shipments
+      description: List Shipments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: union-pacific-shipment.listshipments
+      with:
+        shipmentId: tools.shipmentId
+        equipmentNumber: tools.equipmentNumber
+        origin: tools.origin
+        destination: tools.destination
+        accountId: tools.accountId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-shipment
+      description: Get Shipment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: union-pacific-shipment.getshipment
+      with:
+        shipmentId: tools.shipmentId
+      outputParameters:
+      - type: object
+        mapping: $.
