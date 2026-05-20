@@ -1,5 +1,8 @@
 aid: union-pacific
 url: https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/apis.yml
+common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/unionpacific
 apis:
 - aid: union-pacific:union-pacific
   name: Union Pacific API
