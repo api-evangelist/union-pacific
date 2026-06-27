@@ -65,24 +65,24 @@ apis:
   - url: https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-structure/union-pacific-waybill-structure.json
     type: JSONStructure
   - url: https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-list-shipments-example.json
-    type: Example
+    type: Examples
   - url: https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-    type: Example
-  - type: NaftikoCapability
+    type: Examples
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-account.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-cases.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-equipment.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-intermodal.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-location.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-shipment.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-shipment-actions.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/union-pacific-waybill.yaml
   description: The Union Pacific API provides programmatic access to real-time railroad supply chain data and operational
     actions. The API enables shipment tracking, equipment management, order placement, exception case management, and intermodal
@@ -130,12 +130,12 @@ apis:
 name: Union Pacific
 tags:
   - Fortune 500
-- Freight
-- Railroads
-- Shipping
-- Trains
-- Supply Chain
-- Logistics
+  - Freight
+  - Railroads
+  - Shipping
+  - Trains
+  - Supply Chain
+  - Logistics
 type: Index
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
