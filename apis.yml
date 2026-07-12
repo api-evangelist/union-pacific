@@ -1,6 +1,8 @@
 aid: union-pacific
 url: https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/union-pacific-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/unionpacific
 apis:
@@ -151,4 +153,3 @@ maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 specificationVersion: '0.19'
-common: []
