@@ -1,6 +1,8 @@
 aid: union-pacific
 url: https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/apis.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/union-pacific-agentic-access.yml
   - type: DomainSecurity
     url: security/union-pacific-domain-security.yml
   - type: LinkedIn
