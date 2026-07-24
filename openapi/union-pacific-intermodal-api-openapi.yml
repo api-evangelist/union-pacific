@@ -1,0 +1,219 @@
+openapi: 3.0.3
+info:
+  title: Union Pacific Account Intermodal API
+  version: '1.0'
+  description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
+  contact:
+    name: Union Pacific API Support
+    email: apisupport@up.com
+  x-generated-from: documentation
+  x-last-validated: '2026-05-03'
+servers:
+- url: https://api.up.com
+  description: Union Pacific API
+security:
+- oauth2: []
+tags:
+- name: Intermodal
+  description: Manage intermodal planning, reservations, and driver services
+paths:
+  /intermodal/reservation:
+    post:
+      operationId: createIntermodalReservation
+      summary: Create Intermodal Reservation
+      description: Create a reservation for an intermodal terminal.
+      tags:
+      - Intermodal
+      requestBody:
+        required: true
+        description: Intermodal reservation request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IntermodalReservationRequest'
+      responses:
+        '200':
+          description: Reservation confirmation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntermodalReservation'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized
+  /intermodal/lane:
+    get:
+      operationId: listIntermodalLanes
+      summary: List Intermodal Lanes
+      description: Retrieve available intermodal lanes and service options.
+      tags:
+      - Intermodal
+      parameters:
+      - name: origin
+        in: query
+        required: false
+        description: Origin terminal code
+        schema:
+          type: string
+      - name: destination
+        in: query
+        required: false
+        description: Destination terminal code
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of available intermodal lanes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IntermodalLane'
+        '401':
+          description: Unauthorized
+  /intermodal/departure:
+    get:
+      operationId: listIntermodalDepartures
+      summary: List Intermodal Departures
+      description: Retrieve scheduled intermodal departures.
+      tags:
+      - Intermodal
+      parameters:
+      - name: origin
+        in: query
+        required: false
+        description: Origin terminal code
+        schema:
+          type: string
+      - name: destination
+        in: query
+        required: false
+        description: Destination terminal code
+        schema:
+          type: string
+      - name: date
+        in: query
+        required: false
+        description: Departure date (YYYY-MM-DD)
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: List of scheduled departures
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IntermodalDeparture'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    IntermodalDeparture:
+      type: object
+      description: Scheduled intermodal train departure
+      properties:
+        departureId:
+          type: string
+          description: Departure identifier
+        origin:
+          type: string
+          description: Origin terminal
+        destination:
+          type: string
+          description: Destination terminal
+        scheduledDeparture:
+          type: string
+          format: date-time
+          description: Scheduled departure time
+        estimatedArrival:
+          type: string
+          format: date-time
+          description: Estimated arrival time
+        availableCapacity:
+          type: integer
+          description: Available booking capacity
+    IntermodalReservation:
+      type: object
+      description: Confirmed intermodal terminal reservation
+      properties:
+        reservationId:
+          type: string
+          description: Unique reservation ID
+        status:
+          type: string
+          description: Reservation status
+        confirmationNumber:
+          type: string
+          description: Confirmation number
+        origin:
+          type: string
+          description: Origin terminal
+        destination:
+          type: string
+          description: Destination terminal
+        scheduledDeparture:
+          type: string
+          format: date-time
+          description: Scheduled departure time
+        estimatedArrival:
+          type: string
+          format: date-time
+          description: Estimated arrival time
+    IntermodalReservationRequest:
+      type: object
+      description: Request body for creating an intermodal terminal reservation
+      required:
+      - origin
+      - destination
+      - date
+      - equipmentType
+      properties:
+        origin:
+          type: string
+          description: Origin intermodal terminal code
+        destination:
+          type: string
+          description: Destination intermodal terminal code
+        date:
+          type: string
+          format: date
+          description: Requested departure date
+        equipmentType:
+          type: string
+          description: Equipment type (e.g., 53FT_CONTAINER, 20FT_CONTAINER)
+        quantity:
+          type: integer
+          description: Number of units
+          default: 1
+        accountId:
+          type: string
+          description: Billing account ID
+    IntermodalLane:
+      type: object
+      description: Available intermodal service lane
+      properties:
+        laneId:
+          type: string
+          description: Lane identifier
+        origin:
+          type: string
+          description: Origin terminal code
+        destination:
+          type: string
+          description: Destination terminal code
+        transitDays:
+          type: integer
+          description: Standard transit time in days
+        frequency:
+          type: string
+          description: Service frequency (e.g., DAILY, WEEKLY)
+        equipmentTypes:
+          type: array
+          items:
+            type: string
+          description: Equipment types available on this lane

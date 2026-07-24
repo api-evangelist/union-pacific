@@ -1,0 +1,173 @@
+openapi: 3.0.3
+info:
+  title: Union Pacific Account Shipment Actions API
+  version: '1.0'
+  description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
+  contact:
+    name: Union Pacific API Support
+    email: apisupport@up.com
+  x-generated-from: documentation
+  x-last-validated: '2026-05-03'
+servers:
+- url: https://api.up.com
+  description: Union Pacific API
+security:
+- oauth2: []
+tags:
+- name: Shipment Actions
+  description: Perform actions on shipments — order equipment, release, or cancel
+paths:
+  /releaseShipment:
+    post:
+      operationId: releaseShipment
+      summary: Release Shipment Equipment
+      description: Release held equipment associated with a shipment.
+      tags:
+      - Shipment Actions
+      requestBody:
+        required: true
+        description: Equipment release request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReleaseShipmentRequest'
+      responses:
+        '200':
+          description: Equipment release confirmation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized
+  /orderEquipment:
+    post:
+      operationId: orderEquipment
+      summary: Order In Equipment
+      description: Order rail car equipment for a shipment.
+      tags:
+      - Shipment Actions
+      requestBody:
+        required: true
+        description: Equipment order request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderEquipmentRequest'
+      responses:
+        '200':
+          description: Equipment order confirmation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized
+  /cancelRequest:
+    post:
+      operationId: cancelRequest
+      summary: Cancel Request
+      description: Cancel a previously submitted equipment or shipment request.
+      tags:
+      - Shipment Actions
+      requestBody:
+        required: true
+        description: Cancellation request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelRequest'
+      responses:
+        '200':
+          description: Cancellation confirmation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    CancelRequest:
+      type: object
+      description: Request body for cancelling a request
+      required:
+      - requestId
+      properties:
+        requestId:
+          type: string
+          description: ID of the request to cancel
+        reason:
+          type: string
+          description: Reason for cancellation
+    ReleaseShipmentRequest:
+      type: object
+      description: Request body for releasing equipment
+      required:
+      - shipmentId
+      properties:
+        shipmentId:
+          type: string
+          description: Shipment ID to release equipment for
+        equipmentNumber:
+          type: string
+          description: Specific equipment number to release
+        releaseType:
+          type: string
+          description: Type of release
+    OrderEquipmentRequest:
+      type: object
+      description: Request body for ordering rail car equipment
+      required:
+      - accountId
+      - equipmentType
+      - origin
+      - destination
+      properties:
+        accountId:
+          type: string
+          description: Account identifier
+        equipmentType:
+          type: string
+          description: Type of equipment to order
+        origin:
+          type: string
+          description: Origin location code
+        destination:
+          type: string
+          description: Destination location code
+        requestedDate:
+          type: string
+          format: date
+          description: Requested equipment available date
+        quantity:
+          type: integer
+          description: Number of units to order
+          default: 1
+    ActionResponse:
+      type: object
+      description: Response confirming a successful action
+      properties:
+        confirmationNumber:
+          type: string
+          description: Unique confirmation number for the action
+        status:
+          type: string
+          description: Status of the action
+          enum:
+          - SUCCESS
+          - PENDING
+          - FAILED
+        message:
+          type: string
+          description: Human-readable status message
+        timestamp:
+          type: string
+          format: date-time
+          description: When the action was processed

@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: Union Pacific Account Equipment API
+  version: '1.0'
+  description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
+  contact:
+    name: Union Pacific API Support
+    email: apisupport@up.com
+  x-generated-from: documentation
+  x-last-validated: '2026-05-03'
+servers:
+- url: https://api.up.com
+  description: Union Pacific API
+security:
+- oauth2: []
+tags:
+- name: Equipment
+  description: Search and identify rail equipment by specifications
+paths:
+  /equipment:
+    get:
+      operationId: listEquipment
+      summary: List Equipment
+      description: Search and identify rail equipment by specifications such as type and size.
+      tags:
+      - Equipment
+      parameters:
+      - name: equipmentType
+        in: query
+        required: false
+        description: Type of rail equipment (e.g., boxcar, flatcar, tank car)
+        schema:
+          type: string
+      - name: equipmentNumber
+        in: query
+        required: false
+        description: Specific equipment number to look up
+        schema:
+          type: string
+      - name: accountId
+        in: query
+        required: false
+        description: Account identifier
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of equipment
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Equipment'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    Equipment:
+      type: object
+      description: Rail equipment (car) with specifications and tracking status
+      properties:
+        equipmentNumber:
+          type: string
+          description: Equipment identifier (rail car number)
+        type:
+          type: string
+          description: Equipment type (e.g., BOXCAR, FLATCAR, TANK_CAR, INTERMODAL)
+        status:
+          type: string
+          description: Current equipment status
+        currentLocation:
+          type: string
+          description: Current location code
+        specifications:
+          type: object
+          description: Equipment specifications (length, capacity, etc.)
+          properties:
+            length:
+              type: number
+              description: Length in feet
+            capacity:
+              type: number
+              description: Capacity in tons

@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Union Pacific Account API
+  version: '1.0'
+  description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
+  contact:
+    name: Union Pacific API Support
+    email: apisupport@up.com
+  x-generated-from: documentation
+  x-last-validated: '2026-05-03'
+servers:
+- url: https://api.up.com
+  description: Union Pacific API
+security:
+- oauth2: []
+tags:
+- name: Account
+  description: Access company account information
+paths:
+  /account:
+    get:
+      operationId: listAccounts
+      summary: List Accounts
+      description: Retrieve company account information associated with the authenticated user.
+      tags:
+      - Account
+      responses:
+        '200':
+          description: List of accounts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    Account:
+      type: object
+      description: Union Pacific customer account
+      properties:
+        accountId:
+          type: string
+          description: Unique account identifier
+        name:
+          type: string
+          description: Account name
+        type:
+          type: string
+          description: Account type
+        status:
+          type: string
+          description: Account status

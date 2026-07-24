@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: Union Pacific Account Location API
+  version: '1.0'
+  description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
+  contact:
+    name: Union Pacific API Support
+    email: apisupport@up.com
+  x-generated-from: documentation
+  x-last-validated: '2026-05-03'
+servers:
+- url: https://api.up.com
+  description: Union Pacific API
+security:
+- oauth2: []
+tags:
+- name: Location
+  description: View Union Pacific network facility and location details
+paths:
+  /location:
+    get:
+      operationId: listLocations
+      summary: List Locations
+      description: View Union Pacific network facility and location details.
+      tags:
+      - Location
+      parameters:
+      - name: locationCode
+        in: query
+        required: false
+        description: Filter by location code
+        schema:
+          type: string
+      - name: state
+        in: query
+        required: false
+        description: Filter by US state
+        schema:
+          type: string
+      - name: type
+        in: query
+        required: false
+        description: Location type (e.g., TERMINAL, YARD, INTERMODAL)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of locations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    Location:
+      type: object
+      description: A Union Pacific network facility or location
+      properties:
+        locationCode:
+          type: string
+          description: Location identifier code
+        name:
+          type: string
+          description: Location name
+        type:
+          type: string
+          description: Location type (TERMINAL, YARD, INTERMODAL, STATION)
+        city:
+          type: string
+          description: City
+        state:
+          type: string
+          description: US state code
+        latitude:
+          type: number
+          format: double
+          description: Geographic latitude
+        longitude:
+          type: number
+          format: double
+          description: Geographic longitude

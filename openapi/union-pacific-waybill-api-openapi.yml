@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: Union Pacific Account Waybill API
+  version: '1.0'
+  description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
+  contact:
+    name: Union Pacific API Support
+    email: apisupport@up.com
+  x-generated-from: documentation
+  x-last-validated: '2026-05-03'
+servers:
+- url: https://api.up.com
+  description: Union Pacific API
+security:
+- oauth2: []
+tags:
+- name: Waybill
+  description: Look up waybill details for shipments
+paths:
+  /waybill:
+    get:
+      operationId: listWaybills
+      summary: List Waybills
+      description: Look up waybill details for one or multiple shipments.
+      tags:
+      - Waybill
+      parameters:
+      - name: waybillNumber
+        in: query
+        required: false
+        description: Specific waybill number to retrieve
+        schema:
+          type: string
+      - name: shipmentId
+        in: query
+        required: false
+        description: Shipment ID to retrieve associated waybills
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of waybills
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Waybill'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    Waybill:
+      type: object
+      description: Waybill record for a shipment
+      properties:
+        waybillNumber:
+          type: string
+          description: Unique waybill number
+        shipmentId:
+          type: string
+          description: Associated shipment ID
+        origin:
+          type: string
+          description: Origin location code
+        destination:
+          type: string
+          description: Destination location code
+        commodity:
+          type: string
+          description: Commodity description
+        weight:
+          type: number
+          description: Shipment weight in pounds
+        accountId:
+          type: string
+          description: Billing account ID
+        createdAt:
+          type: string
+          format: date-time
+          description: Waybill creation date
