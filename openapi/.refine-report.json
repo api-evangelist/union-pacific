@@ -1,0 +1,28 @@
+{
+  "provider": "union-pacific",
+  "sources": [
+    "union-pacific-account-api-openapi.yml",
+    "union-pacific-cases-api-openapi.yml",
+    "union-pacific-equipment-api-openapi.yml",
+    "union-pacific-intermodal-api-openapi.yml",
+    "union-pacific-location-api-openapi.yml",
+    "union-pacific-shipment-actions-api-openapi.yml",
+    "union-pacific-shipment-api-openapi.yml",
+    "union-pacific-waybill-api-openapi.yml"
+  ],
+  "outputs": [
+    "union-pacific-account-api-openapi.yml",
+    "union-pacific-cases-api-openapi.yml",
+    "union-pacific-equipment-api-openapi.yml",
+    "union-pacific-intermodal-api-openapi.yml",
+    "union-pacific-location-api-openapi.yml",
+    "union-pacific-shipment-actions-api-openapi.yml",
+    "union-pacific-shipment-api-openapi.yml",
+    "union-pacific-waybill-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
