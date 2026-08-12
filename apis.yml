@@ -92,22 +92,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-cases-api
   name: Union Pacific Cases API
   description: Manage exception cases for shipments that are off course
@@ -192,22 +176,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-equipment-api
   name: Union Pacific Equipment API
   description: Search and identify rail equipment by specifications
@@ -292,22 +260,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-intermodal-api
   name: Union Pacific Intermodal API
   description: Manage intermodal planning, reservations, and driver services
@@ -392,22 +344,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-location-api
   name: Union Pacific Location API
   description: View Union Pacific network facility and location details
@@ -492,22 +428,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-shipment-actions-api
   name: Union Pacific Shipment Actions API
   description: Perform actions on shipments — order equipment, release, or cancel
@@ -592,22 +512,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-shipment-api
   name: Union Pacific Shipment API
   description: Track and manage rail shipments with location and ETA data
@@ -692,22 +596,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 - aid: union-pacific:union-pacific-waybill-api
   name: Union Pacific Waybill API
   description: Look up waybill details for shipments
@@ -792,22 +680,6 @@ apis:
   - type: Examples
     url: >-
       https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-account.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-cases.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-equipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-intermodal.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-location.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-shipment-actions.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/union-pacific-waybill.yaml
 name: Union Pacific
 tags:
   - Fortune 500
