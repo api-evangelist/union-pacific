@@ -1,0 +1,418 @@
+{
+  "item": [
+    {
+      "id": "302d12e2-1c64-4805-bd42-c29ee744ffb1",
+      "name": "Shipment",
+      "description": {
+        "content": "Track and manage rail shipments with location and ETA data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a51b55d-946d-4f3c-a5b6-1f1e522a07aa",
+          "name": "List Shipments",
+          "request": {
+            "name": "List Shipments",
+            "description": {
+              "content": "Search active shipments to view ETA and current location information. Returns shipments matching the provided filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "shipmentId",
+                  "value": "<string>",
+                  "description": "Filter by shipment identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "equipmentNumber",
+                  "value": "<string>",
+                  "description": "Filter by equipment (rail car) number"
+                },
+                {
+                  "disabled": false,
+                  "key": "origin",
+                  "value": "<string>",
+                  "description": "Origin location code"
+                },
+                {
+                  "disabled": false,
+                  "key": "destination",
+                  "value": "<string>",
+                  "description": "Destination location code"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Account identifier to filter shipments"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f6a2280-ed33-4c9e-8b31-0f59c7474f1b",
+              "name": "List of matching shipments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shipmentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "equipmentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "origin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"shipmentId\": \"string\",\n    \"status\": \"IN_TRANSIT\",\n    \"origin\": \"string\",\n    \"destination\": \"string\",\n    \"currentLocation\": {\n      \"locationCode\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"latitude\": 1620.0889351849423,\n      \"longitude\": 803.5738049902363\n    },\n    \"estimatedArrival\": \"1992-10-03T06:37:09.720Z\",\n    \"estimatedGate\": \"1984-08-11T04:02:09.638Z\",\n    \"equipment\": [\n      {\n        \"equipmentNumber\": \"string\",\n        \"type\": \"string\",\n        \"status\": \"string\",\n        \"currentLocation\": \"string\",\n        \"specifications\": {\n          \"length\": 5394.456896867505,\n          \"capacity\": 8175.341260888226\n        }\n      },\n      {\n        \"equipmentNumber\": \"string\",\n        \"type\": \"string\",\n        \"status\": \"string\",\n        \"currentLocation\": \"string\",\n        \"specifications\": {\n          \"length\": 6360.364923294816,\n          \"capacity\": 5782.003490722423\n        }\n      }\n    ],\n    \"accountId\": \"string\",\n    \"waybillNumber\": \"string\",\n    \"commodity\": \"string\"\n  },\n  {\n    \"shipmentId\": \"string\",\n    \"status\": \"IN_TRANSIT\",\n    \"origin\": \"string\",\n    \"destination\": \"string\",\n    \"currentLocation\": {\n      \"locationCode\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"latitude\": 5208.199586802985,\n      \"longitude\": 5025.353501023707\n    },\n    \"estimatedArrival\": \"1972-07-16T11:13:09.439Z\",\n    \"estimatedGate\": \"1989-03-10T16:50:46.762Z\",\n    \"equipment\": [\n      {\n        \"equipmentNumber\": \"string\",\n        \"type\": \"string\",\n        \"status\": \"string\",\n        \"currentLocation\": \"string\",\n        \"specifications\": {\n          \"length\": 5197.724732548137,\n          \"capacity\": 2411.3466731240583\n        }\n      },\n      {\n        \"equipmentNumber\": \"string\",\n        \"type\": \"string\",\n        \"status\": \"string\",\n        \"currentLocation\": \"string\",\n        \"specifications\": {\n          \"length\": 1859.556409257007,\n          \"capacity\": 1844.2722482831364\n        }\n      }\n    ],\n    \"accountId\": \"string\",\n    \"waybillNumber\": \"string\",\n    \"commodity\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e776be9d-8bf7-47b6-8cb4-54beef91f0c5",
+              "name": "Unauthorized — invalid or expired OAuth token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shipmentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "equipmentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "origin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ee83d54e-95ab-4554-be99-e15cdadbc01f",
+              "name": "Forbidden — insufficient permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "shipmentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "equipmentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "origin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29fdae28-6985-48b4-955e-be846141d9a7",
+          "name": "Get Shipment",
+          "request": {
+            "name": "Get Shipment",
+            "description": {
+              "content": "Retrieve details for a specific shipment including current location and ETA.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shipment",
+                ":shipmentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shipmentId",
+                  "description": "(Required) Unique shipment identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a4d65267-dbb1-4a24-b3f0-3852f26d7b22",
+              "name": "Shipment details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipment",
+                    ":shipmentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shipmentId",
+                      "description": "(Required) Unique shipment identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"shipmentId\": \"string\",\n  \"status\": \"HELD\",\n  \"origin\": \"string\",\n  \"destination\": \"string\",\n  \"currentLocation\": {\n    \"locationCode\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"latitude\": 1231.9893971277918,\n    \"longitude\": 1224.8174799412614\n  },\n  \"estimatedArrival\": \"1964-02-11T05:16:51.318Z\",\n  \"estimatedGate\": \"1970-07-13T02:57:25.454Z\",\n  \"equipment\": [\n    {\n      \"equipmentNumber\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\",\n      \"currentLocation\": \"string\",\n      \"specifications\": {\n        \"length\": 6377.4832920789695,\n        \"capacity\": 8557.269584070515\n      }\n    },\n    {\n      \"equipmentNumber\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\",\n      \"currentLocation\": \"string\",\n      \"specifications\": {\n        \"length\": 9029.441657688767,\n        \"capacity\": 3440.191611981104\n      }\n    }\n  ],\n  \"accountId\": \"string\",\n  \"waybillNumber\": \"string\",\n  \"commodity\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e01625c2-7aa8-48c7-bb0d-83d35376cdad",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipment",
+                    ":shipmentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shipmentId",
+                      "description": "(Required) Unique shipment identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aad68611-239e-43a7-86da-a2324d23ba5e",
+              "name": "Shipment not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shipment",
+                    ":shipmentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shipmentId",
+                      "description": "(Required) Unique shipment identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.up.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b2d2c360-4073-4f81-bfad-fc21738213b3",
+    "name": "Union Pacific Account Shipment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.\n\nContact Support:\n Name: Union Pacific API Support\n Email: apisupport@up.com",
+      "type": "text/plain"
+    }
+  }
+}

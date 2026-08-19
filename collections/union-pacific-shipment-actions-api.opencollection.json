@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Shipment Actions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipment Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Release Shipment Equipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.up.com/releaseShipment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Release held equipment associated with a shipment."
+        },
+        {
+          "info": {
+            "name": "Order In Equipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.up.com/orderEquipment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Order rail car equipment for a shipment."
+        },
+        {
+          "info": {
+            "name": "Cancel Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.up.com/cancelRequest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel a previously submitted equipment or shipment request."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

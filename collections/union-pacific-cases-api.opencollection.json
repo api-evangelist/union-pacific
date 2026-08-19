@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Cases API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Cases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/case",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account identifier to filter cases"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter by case status"
+              },
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "query",
+                "description": "Filter cases for a specific shipment"
+              }
+            ]
+          },
+          "docs": "Find exception cases for shipments that are off course or require attention. Returns cases matching the account and filter criteria."
+        },
+        {
+          "info": {
+            "name": "Get Case",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/case/:caseId",
+            "params": [
+              {
+                "name": "caseId",
+                "value": "",
+                "type": "path",
+                "description": "Unique case identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve details for a specific exception case."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

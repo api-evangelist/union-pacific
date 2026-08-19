@@ -1,0 +1,340 @@
+{
+  "item": [
+    {
+      "id": "72d7084f-10eb-43e0-a3b6-bb6f89923e8c",
+      "name": "Cases",
+      "description": {
+        "content": "Manage exception cases for shipments that are off course",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70ce71f1-a15b-4764-9caa-daa682b111c5",
+          "name": "List Cases",
+          "request": {
+            "name": "List Cases",
+            "description": {
+              "content": "Find exception cases for shipments that are off course or require attention. Returns cases matching the account and filter criteria.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "case"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Account identifier to filter cases"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by case status"
+                },
+                {
+                  "disabled": false,
+                  "key": "shipmentId",
+                  "value": "<string>",
+                  "description": "Filter cases for a specific shipment"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "176eb82f-2892-429b-b18b-33159baec039",
+              "name": "List of cases",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "case"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shipmentId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"caseId\": \"string\",\n    \"shipmentId\": \"string\",\n    \"status\": \"CLOSED\",\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1994-06-30T09:46:14.121Z\",\n    \"updatedAt\": \"1970-08-16T04:56:58.637Z\",\n    \"accountId\": \"string\"\n  },\n  {\n    \"caseId\": \"string\",\n    \"shipmentId\": \"string\",\n    \"status\": \"OPEN\",\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1973-10-25T08:04:34.702Z\",\n    \"updatedAt\": \"1983-10-30T02:06:25.012Z\",\n    \"accountId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1d5619b-a4bb-4c13-a753-a6231259fe7d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "case"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "shipmentId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2ca10b9-0344-4278-9354-cb613a87da72",
+          "name": "Get Case",
+          "request": {
+            "name": "Get Case",
+            "description": {
+              "content": "Retrieve details for a specific exception case.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "case",
+                ":caseId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "caseId",
+                  "description": "(Required) Unique case identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9da55909-4481-4db5-919d-83b021afc87e",
+              "name": "Case details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "case",
+                    ":caseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "caseId",
+                      "description": "(Required) Unique case identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"caseId\": \"string\",\n  \"shipmentId\": \"string\",\n  \"status\": \"IN_PROGRESS\",\n  \"type\": \"string\",\n  \"description\": \"string\",\n  \"createdAt\": \"1961-10-07T15:47:29.734Z\",\n  \"updatedAt\": \"2012-11-20T07:16:30.834Z\",\n  \"accountId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "00d36300-e1dd-41ba-b09d-edc632a139d5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "case",
+                    ":caseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "caseId",
+                      "description": "(Required) Unique case identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a607da0f-bb66-4918-91eb-b56694c85f1b",
+              "name": "Case not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "case",
+                    ":caseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "caseId",
+                      "description": "(Required) Unique case identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.up.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a6743d8f-c508-4e15-b197-c5b504fb0ce9",
+    "name": "Union Pacific Account Cases API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.\n\nContact Support:\n Name: Union Pacific API Support\n Email: apisupport@up.com",
+      "type": "text/plain"
+    }
+  }
+}

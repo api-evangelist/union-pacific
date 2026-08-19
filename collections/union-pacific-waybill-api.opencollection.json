@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Waybill API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Waybill",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Waybills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/waybill",
+            "params": [
+              {
+                "name": "waybillNumber",
+                "value": "",
+                "type": "query",
+                "description": "Specific waybill number to retrieve"
+              },
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "query",
+                "description": "Shipment ID to retrieve associated waybills"
+              }
+            ]
+          },
+          "docs": "Look up waybill details for one or multiple shipments."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

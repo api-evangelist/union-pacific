@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Equipment API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Equipment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Equipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/equipment",
+            "params": [
+              {
+                "name": "equipmentType",
+                "value": "",
+                "type": "query",
+                "description": "Type of rail equipment (e.g., boxcar, flatcar, tank car)"
+              },
+              {
+                "name": "equipmentNumber",
+                "value": "",
+                "type": "query",
+                "description": "Specific equipment number to look up"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account identifier"
+              }
+            ]
+          },
+          "docs": "Search and identify rail equipment by specifications such as type and size."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

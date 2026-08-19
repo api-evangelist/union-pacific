@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Shipment API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/shipment",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by shipment identifier"
+              },
+              {
+                "name": "equipmentNumber",
+                "value": "",
+                "type": "query",
+                "description": "Filter by equipment (rail car) number"
+              },
+              {
+                "name": "origin",
+                "value": "",
+                "type": "query",
+                "description": "Origin location code"
+              },
+              {
+                "name": "destination",
+                "value": "",
+                "type": "query",
+                "description": "Destination location code"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account identifier to filter shipments"
+              }
+            ]
+          },
+          "docs": "Search active shipments to view ETA and current location information. Returns shipments matching the provided filters."
+        },
+        {
+          "info": {
+            "name": "Get Shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/shipment/:shipmentId",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path",
+                "description": "Unique shipment identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve details for a specific shipment including current location and ETA."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

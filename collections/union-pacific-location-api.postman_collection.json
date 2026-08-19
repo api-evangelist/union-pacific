@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "a3ca27c7-d33d-4a24-9302-7cfc25c01bb4",
+      "name": "Location",
+      "description": {
+        "content": "View Union Pacific network facility and location details",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d72f85ff-4c13-42c3-a12a-5949145baa3e",
+          "name": "List Locations",
+          "request": {
+            "name": "List Locations",
+            "description": {
+              "content": "View Union Pacific network facility and location details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "location"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locationCode",
+                  "value": "<string>",
+                  "description": "Filter by location code"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter by US state"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Location type (e.g., TERMINAL, YARD, INTERMODAL)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ccf09ab6-c70b-40c3-9d54-95373b60fcf0",
+              "name": "List of locations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "location"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locationCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"locationCode\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"latitude\": 798.3012275464719,\n    \"longitude\": 708.835095990098\n  },\n  {\n    \"locationCode\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"latitude\": 5331.608157764651,\n    \"longitude\": 128.3177956624293\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58bdc83d-bf23-4f9f-996d-8effeded71e5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "location"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locationCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.up.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fce28bdb-90b1-41f1-9702-85db0e219e86",
+    "name": "Union Pacific Account Location API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.\n\nContact Support:\n Name: Union Pacific API Support\n Email: apisupport@up.com",
+      "type": "text/plain"
+    }
+  }
+}

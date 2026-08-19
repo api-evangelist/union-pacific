@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Location API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Location",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/location",
+            "params": [
+              {
+                "name": "locationCode",
+                "value": "",
+                "type": "query",
+                "description": "Filter by location code"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "Filter by US state"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Location type (e.g., TERMINAL, YARD, INTERMODAL)"
+              }
+            ]
+          },
+          "docs": "View Union Pacific network facility and location details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

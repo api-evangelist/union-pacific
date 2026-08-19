@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "abe6f94e-a00b-4408-92ef-b94a1eb29c60",
+      "name": "Equipment",
+      "description": {
+        "content": "Search and identify rail equipment by specifications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "504d6c47-e93a-466e-9c66-fd64b0c495c1",
+          "name": "List Equipment",
+          "request": {
+            "name": "List Equipment",
+            "description": {
+              "content": "Search and identify rail equipment by specifications such as type and size.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "equipment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "equipmentType",
+                  "value": "<string>",
+                  "description": "Type of rail equipment (e.g., boxcar, flatcar, tank car)"
+                },
+                {
+                  "disabled": false,
+                  "key": "equipmentNumber",
+                  "value": "<string>",
+                  "description": "Specific equipment number to look up"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Account identifier"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2ed12a0d-d94b-425b-8677-bfb469a2fafd",
+              "name": "List of equipment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "equipmentType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "equipmentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"equipmentNumber\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"currentLocation\": \"string\",\n    \"specifications\": {\n      \"length\": 8670.113881906163,\n      \"capacity\": 6276.382395441963\n    }\n  },\n  {\n    \"equipmentNumber\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"currentLocation\": \"string\",\n    \"specifications\": {\n      \"length\": 8464.25002836772,\n      \"capacity\": 7065.734454946459\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "083af2a1-241b-4b09-baf3-832db369a3e9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "equipmentType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "equipmentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.up.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "37366e17-ee66-4a15-b77f-2a0e049d36e4",
+    "name": "Union Pacific Account Equipment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.\n\nContact Support:\n Name: Union Pacific API Support\n Email: apisupport@up.com",
+      "type": "text/plain"
+    }
+  }
+}

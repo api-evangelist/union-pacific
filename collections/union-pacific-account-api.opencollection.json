@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/account"
+          },
+          "docs": "Retrieve company account information associated with the authenticated user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

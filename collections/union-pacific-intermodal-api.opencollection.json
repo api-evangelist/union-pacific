@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Union Pacific Account Intermodal API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Intermodal",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Intermodal Reservation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.up.com/intermodal/reservation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a reservation for an intermodal terminal."
+        },
+        {
+          "info": {
+            "name": "List Intermodal Lanes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/intermodal/lane",
+            "params": [
+              {
+                "name": "origin",
+                "value": "",
+                "type": "query",
+                "description": "Origin terminal code"
+              },
+              {
+                "name": "destination",
+                "value": "",
+                "type": "query",
+                "description": "Destination terminal code"
+              }
+            ]
+          },
+          "docs": "Retrieve available intermodal lanes and service options."
+        },
+        {
+          "info": {
+            "name": "List Intermodal Departures",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.up.com/intermodal/departure",
+            "params": [
+              {
+                "name": "origin",
+                "value": "",
+                "type": "query",
+                "description": "Origin terminal code"
+              },
+              {
+                "name": "destination",
+                "value": "",
+                "type": "query",
+                "description": "Destination terminal code"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "Departure date (YYYY-MM-DD)"
+              }
+            ]
+          },
+          "docs": "Retrieve scheduled intermodal departures."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
