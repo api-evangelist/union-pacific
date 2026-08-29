@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Union Pacific Account Shipment Actions API
   version: '1.0'
@@ -94,18 +94,27 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    CancelRequest:
+    ActionResponse:
       type: object
-      description: Request body for cancelling a request
-      required:
-      - requestId
+      description: Response confirming a successful action
       properties:
-        requestId:
+        confirmationNumber:
           type: string
-          description: ID of the request to cancel
-        reason:
+          description: Unique confirmation number for the action
+        status:
           type: string
-          description: Reason for cancellation
+          description: Status of the action
+          enum:
+          - SUCCESS
+          - PENDING
+          - FAILED
+        message:
+          type: string
+          description: Human-readable status message
+        timestamp:
+          type: string
+          format: date-time
+          description: When the action was processed
     ReleaseShipmentRequest:
       type: object
       description: Request body for releasing equipment
@@ -121,6 +130,18 @@ components:
         releaseType:
           type: string
           description: Type of release
+    CancelRequest:
+      type: object
+      description: Request body for cancelling a request
+      required:
+      - requestId
+      properties:
+        requestId:
+          type: string
+          description: ID of the request to cancel
+        reason:
+          type: string
+          description: Reason for cancellation
     OrderEquipmentRequest:
       type: object
       description: Request body for ordering rail car equipment
@@ -150,24 +171,3 @@ components:
           type: integer
           description: Number of units to order
           default: 1
-    ActionResponse:
-      type: object
-      description: Response confirming a successful action
-      properties:
-        confirmationNumber:
-          type: string
-          description: Unique confirmation number for the action
-        status:
-          type: string
-          description: Status of the action
-          enum:
-          - SUCCESS
-          - PENDING
-          - FAILED
-        message:
-          type: string
-          description: Human-readable status message
-        timestamp:
-          type: string
-          format: date-time
-          description: When the action was processed

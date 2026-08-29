@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Union Pacific Account Intermodal API
   version: '1.0'
@@ -113,30 +113,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    IntermodalDeparture:
-      type: object
-      description: Scheduled intermodal train departure
-      properties:
-        departureId:
-          type: string
-          description: Departure identifier
-        origin:
-          type: string
-          description: Origin terminal
-        destination:
-          type: string
-          description: Destination terminal
-        scheduledDeparture:
-          type: string
-          format: date-time
-          description: Scheduled departure time
-        estimatedArrival:
-          type: string
-          format: date-time
-          description: Estimated arrival time
-        availableCapacity:
-          type: integer
-          description: Available booking capacity
     IntermodalReservation:
       type: object
       description: Confirmed intermodal terminal reservation
@@ -164,6 +140,30 @@ components:
           type: string
           format: date-time
           description: Estimated arrival time
+    IntermodalDeparture:
+      type: object
+      description: Scheduled intermodal train departure
+      properties:
+        departureId:
+          type: string
+          description: Departure identifier
+        origin:
+          type: string
+          description: Origin terminal
+        destination:
+          type: string
+          description: Destination terminal
+        scheduledDeparture:
+          type: string
+          format: date-time
+          description: Scheduled departure time
+        estimatedArrival:
+          type: string
+          format: date-time
+          description: Estimated arrival time
+        availableCapacity:
+          type: integer
+          description: Available booking capacity
     IntermodalReservationRequest:
       type: object
       description: Request body for creating an intermodal terminal reservation
