@@ -717,7 +717,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/union-paci
 access: 3rd-Party
 created: '2025-02-06'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 description: Union Pacific is one of the largest freight railroad networks in the United States, operating across 23 states
   in the western two-thirds of the country. The company transports a diverse range of commodities including agricultural products,
   automotive goods, chemicals, energy resources, and industrial materials. Union Pacific's API platform gives businesses programmatic
