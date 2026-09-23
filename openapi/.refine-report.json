@@ -1,14 +1,7 @@
 {
   "provider": "union-pacific",
   "sources": [
-    "union-pacific-account-api-openapi.yml",
-    "union-pacific-cases-api-openapi.yml",
-    "union-pacific-equipment-api-openapi.yml",
-    "union-pacific-intermodal-api-openapi.yml",
-    "union-pacific-location-api-openapi.yml",
-    "union-pacific-shipment-actions-api-openapi.yml",
-    "union-pacific-shipment-api-openapi.yml",
-    "union-pacific-waybill-api-openapi.yml"
+    "_ae-authored/union-pacific-api.yaml"
   ],
   "outputs": [
     "union-pacific-account-api-openapi.yml",
@@ -16,23 +9,26 @@
     "union-pacific-equipment-api-openapi.yml",
     "union-pacific-intermodal-api-openapi.yml",
     "union-pacific-location-api-openapi.yml",
-    "union-pacific-shipment-actions-api-openapi.yml",
     "union-pacific-shipment-api-openapi.yml",
+    "union-pacific-shipment-actions-api-openapi.yml",
     "union-pacific-waybill-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "union-pacific-account-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-cases-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-equipment-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-intermodal-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-location-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-shipment-actions-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-shipment-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "union-pacific-waybill-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "union-pacific-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "union-pacific-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-cases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-equipment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-intermodal-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-location-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-shipment-actions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-shipment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "union-pacific-waybill-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

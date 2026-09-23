@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Union Pacific Account Intermodal API
+  title: Union Pacific Intermodal API
   version: '1.0'
   description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
   contact:
@@ -113,57 +113,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    IntermodalReservation:
-      type: object
-      description: Confirmed intermodal terminal reservation
-      properties:
-        reservationId:
-          type: string
-          description: Unique reservation ID
-        status:
-          type: string
-          description: Reservation status
-        confirmationNumber:
-          type: string
-          description: Confirmation number
-        origin:
-          type: string
-          description: Origin terminal
-        destination:
-          type: string
-          description: Destination terminal
-        scheduledDeparture:
-          type: string
-          format: date-time
-          description: Scheduled departure time
-        estimatedArrival:
-          type: string
-          format: date-time
-          description: Estimated arrival time
-    IntermodalDeparture:
-      type: object
-      description: Scheduled intermodal train departure
-      properties:
-        departureId:
-          type: string
-          description: Departure identifier
-        origin:
-          type: string
-          description: Origin terminal
-        destination:
-          type: string
-          description: Destination terminal
-        scheduledDeparture:
-          type: string
-          format: date-time
-          description: Scheduled departure time
-        estimatedArrival:
-          type: string
-          format: date-time
-          description: Estimated arrival time
-        availableCapacity:
-          type: integer
-          description: Available booking capacity
     IntermodalReservationRequest:
       type: object
       description: Request body for creating an intermodal terminal reservation
@@ -217,3 +166,54 @@ components:
           items:
             type: string
           description: Equipment types available on this lane
+    IntermodalDeparture:
+      type: object
+      description: Scheduled intermodal train departure
+      properties:
+        departureId:
+          type: string
+          description: Departure identifier
+        origin:
+          type: string
+          description: Origin terminal
+        destination:
+          type: string
+          description: Destination terminal
+        scheduledDeparture:
+          type: string
+          format: date-time
+          description: Scheduled departure time
+        estimatedArrival:
+          type: string
+          format: date-time
+          description: Estimated arrival time
+        availableCapacity:
+          type: integer
+          description: Available booking capacity
+    IntermodalReservation:
+      type: object
+      description: Confirmed intermodal terminal reservation
+      properties:
+        reservationId:
+          type: string
+          description: Unique reservation ID
+        status:
+          type: string
+          description: Reservation status
+        confirmationNumber:
+          type: string
+          description: Confirmation number
+        origin:
+          type: string
+          description: Origin terminal
+        destination:
+          type: string
+          description: Destination terminal
+        scheduledDeparture:
+          type: string
+          format: date-time
+          description: Scheduled departure time
+        estimatedArrival:
+          type: string
+          format: date-time
+          description: Estimated arrival time

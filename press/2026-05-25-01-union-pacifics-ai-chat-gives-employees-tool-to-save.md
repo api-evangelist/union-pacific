@@ -1,7 +1,9 @@
 ---
 title: Union Pacific's AI Chat Gives Employees Tool to Save ...
 url: https://www.up.com/news/service/ai-chatgpt-tool-it-240205
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Union Pacific" press release artificial intelligence'
 position: 1
 source: serpapi-google

@@ -1,7 +1,9 @@
 ---
 title: AI is Enhancing How Union Pacific Inspects Track
 url: https://www.up.com/news/safety/ai-powered-vision-inspects-track-260522
-date: '2026-05-22'
+published: ''
+date_basis: harvested
+harvested: '2026-05-22'
 author: ''
 feed_url: http://www.up.com/news/rss.xml
 ---

@@ -1,7 +1,9 @@
 ---
 title: Our track inspectors are getting a high-tech assist. With AI ...
 url: https://www.facebook.com/unionpacific/posts/our-track-inspectors-are-getting-a-high-tech-assistwith-ai-powered-machine-visio/1400107518819198/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Union Pacific" press release artificial intelligence'
 position: 4
 source: serpapi-google

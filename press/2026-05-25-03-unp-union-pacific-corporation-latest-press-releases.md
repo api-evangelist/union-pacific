@@ -1,7 +1,9 @@
 ---
 title: UNP Union Pacific Corporation Latest Press Releases
 url: https://seekingalpha.com/symbol/UNP/press-releases
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Union Pacific" press release artificial intelligence'
 position: 3
 source: serpapi-google

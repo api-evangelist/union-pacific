@@ -1,7 +1,9 @@
 ---
 title: 'Union Pacific''s AI Strategy: Analysis of Dominance in ...'
 url: https://www.klover.ai/union-pacific-ai-strategy-analysis-of-dominance-in-railroad/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Union Pacific" press release artificial intelligence'
 position: 5
 source: serpapi-google

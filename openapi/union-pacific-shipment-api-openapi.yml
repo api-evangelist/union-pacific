@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Union Pacific Account Shipment API
+  title: Union Pacific Shipment API
   version: '1.0'
   description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
   contact:
@@ -122,6 +122,32 @@ components:
           type: number
           format: double
           description: Geographic longitude
+    Equipment:
+      type: object
+      description: Rail equipment (car) with specifications and tracking status
+      properties:
+        equipmentNumber:
+          type: string
+          description: Equipment identifier (rail car number)
+        type:
+          type: string
+          description: Equipment type (e.g., BOXCAR, FLATCAR, TANK_CAR, INTERMODAL)
+        status:
+          type: string
+          description: Current equipment status
+        currentLocation:
+          type: string
+          description: Current location code
+        specifications:
+          type: object
+          description: Equipment specifications (length, capacity, etc.)
+          properties:
+            length:
+              type: number
+              description: Length in feet
+            capacity:
+              type: number
+              description: Capacity in tons
     Shipment:
       type: object
       description: A rail shipment with tracking and ETA information
@@ -168,29 +194,3 @@ components:
         commodity:
           type: string
           description: Type of commodity being shipped
-    Equipment:
-      type: object
-      description: Rail equipment (car) with specifications and tracking status
-      properties:
-        equipmentNumber:
-          type: string
-          description: Equipment identifier (rail car number)
-        type:
-          type: string
-          description: Equipment type (e.g., BOXCAR, FLATCAR, TANK_CAR, INTERMODAL)
-        status:
-          type: string
-          description: Current equipment status
-        currentLocation:
-          type: string
-          description: Current location code
-        specifications:
-          type: object
-          description: Equipment specifications (length, capacity, etc.)
-          properties:
-            length:
-              type: number
-              description: Length in feet
-            capacity:
-              type: number
-              description: Capacity in tons

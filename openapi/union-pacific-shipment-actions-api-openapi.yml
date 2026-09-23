@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Union Pacific Account Shipment Actions API
+  title: Union Pacific Shipment Actions API
   version: '1.0'
   description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
   contact:
@@ -94,42 +94,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    ActionResponse:
-      type: object
-      description: Response confirming a successful action
-      properties:
-        confirmationNumber:
-          type: string
-          description: Unique confirmation number for the action
-        status:
-          type: string
-          description: Status of the action
-          enum:
-          - SUCCESS
-          - PENDING
-          - FAILED
-        message:
-          type: string
-          description: Human-readable status message
-        timestamp:
-          type: string
-          format: date-time
-          description: When the action was processed
-    ReleaseShipmentRequest:
-      type: object
-      description: Request body for releasing equipment
-      required:
-      - shipmentId
-      properties:
-        shipmentId:
-          type: string
-          description: Shipment ID to release equipment for
-        equipmentNumber:
-          type: string
-          description: Specific equipment number to release
-        releaseType:
-          type: string
-          description: Type of release
     CancelRequest:
       type: object
       description: Request body for cancelling a request
@@ -171,3 +135,39 @@ components:
           type: integer
           description: Number of units to order
           default: 1
+    ActionResponse:
+      type: object
+      description: Response confirming a successful action
+      properties:
+        confirmationNumber:
+          type: string
+          description: Unique confirmation number for the action
+        status:
+          type: string
+          description: Status of the action
+          enum:
+          - SUCCESS
+          - PENDING
+          - FAILED
+        message:
+          type: string
+          description: Human-readable status message
+        timestamp:
+          type: string
+          format: date-time
+          description: When the action was processed
+    ReleaseShipmentRequest:
+      type: object
+      description: Request body for releasing equipment
+      required:
+      - shipmentId
+      properties:
+        shipmentId:
+          type: string
+          description: Shipment ID to release equipment for
+        equipmentNumber:
+          type: string
+          description: Specific equipment number to release
+        releaseType:
+          type: string
+          description: Type of release

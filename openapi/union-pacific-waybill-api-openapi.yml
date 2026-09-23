@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Union Pacific Account Waybill API
+  title: Union Pacific Waybill API
   version: '1.0'
   description: The Union Pacific API provides developers and businesses with programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, case management, and intermodal planning. APIs are structured as data objects (building blocks) that can be used standalone or combined to create more robust supply chain workflows. Authentication uses OAuth 2.0 token-based flow with Client Credentials.
   contact:
