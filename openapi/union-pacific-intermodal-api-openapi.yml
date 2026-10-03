@@ -113,30 +113,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    IntermodalLane:
-      type: object
-      description: Available intermodal service lane
-      properties:
-        laneId:
-          type: string
-          description: Lane identifier
-        origin:
-          type: string
-          description: Origin terminal code
-        destination:
-          type: string
-          description: Destination terminal code
-        transitDays:
-          type: integer
-          description: Standard transit time in days
-        frequency:
-          type: string
-          description: Service frequency (e.g., DAILY, WEEKLY)
-        equipmentTypes:
-          type: array
-          items:
-            type: string
-          description: Equipment types available on this lane
     IntermodalDeparture:
       type: object
       description: Scheduled intermodal train departure
@@ -217,3 +193,27 @@ components:
           type: string
           format: date-time
           description: Estimated arrival time
+    IntermodalLane:
+      type: object
+      description: Available intermodal service lane
+      properties:
+        laneId:
+          type: string
+          description: Lane identifier
+        origin:
+          type: string
+          description: Origin terminal code
+        destination:
+          type: string
+          description: Destination terminal code
+        transitDays:
+          type: integer
+          description: Standard transit time in days
+        frequency:
+          type: string
+          description: Service frequency (e.g., DAILY, WEEKLY)
+        equipmentTypes:
+          type: array
+          items:
+            type: string
+          description: Equipment types available on this lane

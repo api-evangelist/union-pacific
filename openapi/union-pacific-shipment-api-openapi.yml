@@ -95,59 +95,6 @@ paths:
           description: Shipment not found
 components:
   schemas:
-    Location:
-      type: object
-      description: A Union Pacific network facility or location
-      properties:
-        locationCode:
-          type: string
-          description: Location identifier code
-        name:
-          type: string
-          description: Location name
-        type:
-          type: string
-          description: Location type (TERMINAL, YARD, INTERMODAL, STATION)
-        city:
-          type: string
-          description: City
-        state:
-          type: string
-          description: US state code
-        latitude:
-          type: number
-          format: double
-          description: Geographic latitude
-        longitude:
-          type: number
-          format: double
-          description: Geographic longitude
-    Equipment:
-      type: object
-      description: Rail equipment (car) with specifications and tracking status
-      properties:
-        equipmentNumber:
-          type: string
-          description: Equipment identifier (rail car number)
-        type:
-          type: string
-          description: Equipment type (e.g., BOXCAR, FLATCAR, TANK_CAR, INTERMODAL)
-        status:
-          type: string
-          description: Current equipment status
-        currentLocation:
-          type: string
-          description: Current location code
-        specifications:
-          type: object
-          description: Equipment specifications (length, capacity, etc.)
-          properties:
-            length:
-              type: number
-              description: Length in feet
-            capacity:
-              type: number
-              description: Capacity in tons
     Shipment:
       type: object
       description: A rail shipment with tracking and ETA information
@@ -194,3 +141,56 @@ components:
         commodity:
           type: string
           description: Type of commodity being shipped
+    Equipment:
+      type: object
+      description: Rail equipment (car) with specifications and tracking status
+      properties:
+        equipmentNumber:
+          type: string
+          description: Equipment identifier (rail car number)
+        type:
+          type: string
+          description: Equipment type (e.g., BOXCAR, FLATCAR, TANK_CAR, INTERMODAL)
+        status:
+          type: string
+          description: Current equipment status
+        currentLocation:
+          type: string
+          description: Current location code
+        specifications:
+          type: object
+          description: Equipment specifications (length, capacity, etc.)
+          properties:
+            length:
+              type: number
+              description: Length in feet
+            capacity:
+              type: number
+              description: Capacity in tons
+    Location:
+      type: object
+      description: A Union Pacific network facility or location
+      properties:
+        locationCode:
+          type: string
+          description: Location identifier code
+        name:
+          type: string
+          description: Location name
+        type:
+          type: string
+          description: Location type (TERMINAL, YARD, INTERMODAL, STATION)
+        city:
+          type: string
+          description: City
+        state:
+          type: string
+          description: US state code
+        latitude:
+          type: number
+          format: double
+          description: Geographic latitude
+        longitude:
+          type: number
+          format: double
+          description: Geographic longitude
