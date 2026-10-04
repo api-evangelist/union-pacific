@@ -113,30 +113,6 @@ paths:
           description: Unauthorized
 components:
   schemas:
-    IntermodalDeparture:
-      type: object
-      description: Scheduled intermodal train departure
-      properties:
-        departureId:
-          type: string
-          description: Departure identifier
-        origin:
-          type: string
-          description: Origin terminal
-        destination:
-          type: string
-          description: Destination terminal
-        scheduledDeparture:
-          type: string
-          format: date-time
-          description: Scheduled departure time
-        estimatedArrival:
-          type: string
-          format: date-time
-          description: Estimated arrival time
-        availableCapacity:
-          type: integer
-          description: Available booking capacity
     IntermodalReservationRequest:
       type: object
       description: Request body for creating an intermodal terminal reservation
@@ -166,6 +142,54 @@ components:
         accountId:
           type: string
           description: Billing account ID
+    IntermodalLane:
+      type: object
+      description: Available intermodal service lane
+      properties:
+        laneId:
+          type: string
+          description: Lane identifier
+        origin:
+          type: string
+          description: Origin terminal code
+        destination:
+          type: string
+          description: Destination terminal code
+        transitDays:
+          type: integer
+          description: Standard transit time in days
+        frequency:
+          type: string
+          description: Service frequency (e.g., DAILY, WEEKLY)
+        equipmentTypes:
+          type: array
+          items:
+            type: string
+          description: Equipment types available on this lane
+    IntermodalDeparture:
+      type: object
+      description: Scheduled intermodal train departure
+      properties:
+        departureId:
+          type: string
+          description: Departure identifier
+        origin:
+          type: string
+          description: Origin terminal
+        destination:
+          type: string
+          description: Destination terminal
+        scheduledDeparture:
+          type: string
+          format: date-time
+          description: Scheduled departure time
+        estimatedArrival:
+          type: string
+          format: date-time
+          description: Estimated arrival time
+        availableCapacity:
+          type: integer
+          description: Available booking capacity
     IntermodalReservation:
       type: object
       description: Confirmed intermodal terminal reservation
@@ -193,27 +217,3 @@ components:
           type: string
           format: date-time
           description: Estimated arrival time
-    IntermodalLane:
-      type: object
-      description: Available intermodal service lane
-      properties:
-        laneId:
-          type: string
-          description: Lane identifier
-        origin:
-          type: string
-          description: Origin terminal code
-        destination:
-          type: string
-          description: Destination terminal code
-        transitDays:
-          type: integer
-          description: Standard transit time in days
-        frequency:
-          type: string
-          description: Service frequency (e.g., DAILY, WEEKLY)
-        equipmentTypes:
-          type: array
-          items:
-            type: string
-          description: Equipment types available on this lane
