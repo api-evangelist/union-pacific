@@ -5,7 +5,7 @@
       "source": "https://www.up.com/news",
       "feed_url": "https://www.up.com/news/rss.xml",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "discovered"
     },
     {
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 1,
-  "fetched": "2026-10-10T13:15:00Z"
+  "fetched": "2026-10-17T14:53:57Z"
 }
