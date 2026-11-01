@@ -1,4 +1,4 @@
-# Union Pacific (union-pacific)
+# Union Pacific
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,82 +66,146 @@
 
 Union Pacific is one of the largest freight railroad networks in the United States, operating across 23 states in the western two-thirds of the country. The company transports a diverse range of commodities including agricultural products, automotive goods, chemicals, energy resources, and industrial materials. Union Pacific's API platform gives businesses programmatic access to real-time shipment tracking, equipment management, intermodal planning, and supply chain exception handling, enabling seamless integration with logistics and supply chain management systems.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/apis.yml)
+**Areas:** Fortune 500 · Freight · Railroads · Shipping · Trains · Supply Chain · Logistics
 
-## Scope
+## Union Pacific on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Union Pacific is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/union-pacific/](https://apis.io/providers/union-pacific/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Freight, Railroads, Shipping, Trains, Supply Chain, Logistics
+- [Union Pacific Account API](https://apis.io/apis/union-pacific/union-pacific-account-api/) — Access company account information
+- [Union Pacific Cases API](https://apis.io/apis/union-pacific/union-pacific-cases-api/) — Manage exception cases for shipments that are off course
+- [Union Pacific Equipment API](https://apis.io/apis/union-pacific/union-pacific-equipment-api/) — Search and identify rail equipment by specifications
+- [Union Pacific Intermodal API](https://apis.io/apis/union-pacific/union-pacific-intermodal-api/) — Manage intermodal planning, reservations, and driver services
+- [Union Pacific Location API](https://apis.io/apis/union-pacific/union-pacific-location-api/) — View Union Pacific network facility and location details
+- [Union Pacific Shipment Actions API](https://apis.io/apis/union-pacific/union-pacific-shipment-actions-api/) — Perform actions on shipments — order equipment, release, or cancel
+- [Union Pacific Shipment API](https://apis.io/apis/union-pacific/union-pacific-shipment-api/) — Track and manage rail shipments with location and ETA data
+- [Union Pacific Waybill API](https://apis.io/apis/union-pacific/union-pacific-waybill-api/) — Look up waybill details for shipments
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-06
-- **Modified:** 2026-05-03
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Union Pacific API
-The Union Pacific API provides programmatic access to real-time railroad supply chain data and operational actions. The API enables shipment tracking, equipment management, order placement, exception case management, and intermodal planning. APIs are structured as data objects that can be used standalone or combined to create robust supply chain workflows. Authentication uses OAuth 2.0 Client Credentials flow.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-**Human URL:** [https://www.up.com/customers/all/api-developer/index.htm](https://www.up.com/customers/all/api-developer/index.htm)
+- [Union Pacific Agentic Access](https://apis.io/agentic-access/union-pacific/union-pacific-agentic-access/)
 
-**Base URL:** https://api.up.com
+#### JSON Schema (14)
 
-#### Tags
+The data models the API reads and writes.
 
-- Freight, Railroads, Shipping, Trains, Supply Chain, Logistics
+- [Account](https://apis.io/schemas/union-pacific/union-pacific-account/)
+- [ActionResponse](https://apis.io/schemas/union-pacific/union-pacific-action-response/)
+- [CancelRequest](https://apis.io/schemas/union-pacific/union-pacific-cancel-request/)
+- [Case](https://apis.io/schemas/union-pacific/union-pacific-case/)
+- [Equipment](https://apis.io/schemas/union-pacific/union-pacific-equipment/)
+- [IntermodalDeparture](https://apis.io/schemas/union-pacific/union-pacific-intermodal-departure/)
+- [IntermodalLane](https://apis.io/schemas/union-pacific/union-pacific-intermodal-lane/)
+- [IntermodalReservation](https://apis.io/schemas/union-pacific/union-pacific-intermodal-reservation/)
+- [IntermodalReservationRequest](https://apis.io/schemas/union-pacific/union-pacific-intermodal-reservation-request/)
+- [Location](https://apis.io/schemas/union-pacific/union-pacific-location/)
+- [OrderEquipmentRequest](https://apis.io/schemas/union-pacific/union-pacific-order-equipment-request/)
+- [ReleaseShipmentRequest](https://apis.io/schemas/union-pacific/union-pacific-release-shipment-request/)
+- [Shipment](https://apis.io/schemas/union-pacific/union-pacific-shipment/)
+- [Waybill](https://apis.io/schemas/union-pacific/union-pacific-waybill/)
 
-#### Properties
+#### JSON Structure (6)
 
-- [Documentation](https://www.up.com/customers/all/api-developer/index.htm)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/openapi/union-pacific-api.yaml)
-- [SpectralRules](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/rules/union-pacific-spectral-rules.yml)
-- [NaftikoCapability - Shared](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/capabilities/shared/union-pacific-api.yaml)
-- [NaftikoCapability - Rail Freight Operations](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/capabilities/rail-freight-operations.yaml)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/vocabulary/union-pacific-vocabulary.yaml)
-- [JSON-LD Context](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-ld/union-pacific-context.jsonld)
+Data models expressed in JSON Structure.
 
-#### JSON Schemas
+- [Union Pacific Case Structure](https://apis.io/json-structure/union-pacific/union-pacific-case-structure/)
+- [Union Pacific Equipment Structure](https://apis.io/json-structure/union-pacific/union-pacific-equipment-structure/)
+- [Union Pacific Intermodal Reservation Structure](https://apis.io/json-structure/union-pacific/union-pacific-intermodal-reservation-structure/)
+- [Union Pacific Location Structure](https://apis.io/json-structure/union-pacific/union-pacific-location-structure/)
+- [Union Pacific Shipment Structure](https://apis.io/json-structure/union-pacific/union-pacific-shipment-structure/)
+- [Union Pacific Waybill Structure](https://apis.io/json-structure/union-pacific/union-pacific-waybill-structure/)
 
-- [Shipment](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-shipment-schema.json)
-- [Case](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-case-schema.json)
-- [Equipment](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-equipment-schema.json)
-- [Location](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-location-schema.json)
-- [Waybill](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-waybill-schema.json)
-- [Intermodal Reservation](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-reservation-schema.json)
-- [Intermodal Lane](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-lane-schema.json)
-- [Intermodal Departure](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/json-schema/union-pacific-intermodal-departure-schema.json)
+#### JSON-LD (1)
 
-#### Examples
+Linked-data contexts for the provider's vocabulary.
 
-- [List Shipments](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-list-shipments-example.json)
-- [Create Intermodal Reservation](https://raw.githubusercontent.com/api-evangelist/union-pacific/refs/heads/main/examples/union-pacific-create-intermodal-reservation-example.json)
+- [Union Pacific Context](https://apis.io/jsonld/union-pacific/union-pacific-context/)
 
-## Features
+#### Vocabulary (1)
 
-- **Real-Time Shipment Tracking** — Track active rail shipments with current location and estimated arrival times
-- **Exception Case Management** — Monitor and resolve supply chain exceptions for off-course or delayed shipments
-- **Equipment Management** — Search, order, and release rail car equipment including intermodal containers
-- **Intermodal Planning** — Create reservations, find service lanes, and view departure schedules for intermodal transport
-- **Network Locations** — Access Union Pacific facility, yard, and terminal location data across the network
-- **Waybill Lookup** — Retrieve waybill documents with shipment routing and billing information
-- **OAuth 2.0 Security** — Secure API access using OAuth 2.0 Client Credentials flow
+The provider's domain terms, defined.
 
-## Use Cases
+- [Union Pacific API Vocabulary](https://apis.io/vocabularies/union-pacific/union-pacific-vocabulary/)
 
-- **Supply Chain Visibility** — Logistics managers monitor active shipments across the UP network in real time
-- **Exception Resolution** — Operations teams identify and resolve shipment exceptions to minimize delays
-- **Intermodal Logistics** — Shippers book intermodal container space between UP terminals for coast-to-coast transport
-- **Equipment Procurement** — Businesses order rail car equipment for upcoming shipping needs
-- **Supply Chain Integration** — ERP and TMS platforms integrate UP freight data via API for automated logistics workflows
+#### Examples (2)
 
-## Maintainers
+Example requests and responses.
 
-**FN:** Kin Lane
+- [Union Pacific Create Intermodal Reservation Example](https://apis.io/examples/union-pacific/union-pacific-create-intermodal-reservation-example/)
+- [Union Pacific List Shipments Example](https://apis.io/examples/union-pacific/union-pacific-list-shipments-example/)
 
-**Email:** kin@apievangelist.com
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [Union Pacific Account API](https://apis.io/collections/union-pacific/open-union-pacific-account-api/)
+- [Union Pacific Account Cases API](https://apis.io/collections/union-pacific/open-union-pacific-cases-api/)
+- [Union Pacific Account Equipment API](https://apis.io/collections/union-pacific/open-union-pacific-equipment-api/)
+- [Union Pacific Account Intermodal API](https://apis.io/collections/union-pacific/open-union-pacific-intermodal-api/)
+- [Union Pacific Account Location API](https://apis.io/collections/union-pacific/open-union-pacific-location-api/)
+- [Union Pacific Account Shipment Actions API](https://apis.io/collections/union-pacific/open-union-pacific-shipment-actions-api/)
+- [Union Pacific Account Shipment API](https://apis.io/collections/union-pacific/open-union-pacific-shipment-api/)
+- [Union Pacific Account Waybill API](https://apis.io/collections/union-pacific/open-union-pacific-waybill-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Union Pacific — jsonschema rules](https://apis.io/rules/union-pacific/union-pacific-jsonschema-spectral-rules/)
+- [Union Pacific API Rules](https://apis.io/rules/union-pacific/union-pacific-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Union Pacific Domain Security](https://apis.io/security/union-pacific/union-pacific-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Union Pacific Plans Pricing](https://apis.io/plans/union-pacific/union-pacific-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Union Pacific Rate Limits](https://apis.io/rate-limits/union-pacific/union-pacific-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Union Pacific Finops](https://apis.io/finops/union-pacific/union-pacific-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Blog](https://www.up.com/news)
+
+## API Evangelist rating
+
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Union Pacific: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/union-pacific/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
